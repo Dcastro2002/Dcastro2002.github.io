@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Cumpleaños Estephany Gabriela</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            width: 500px;
+            height: 350px;
+            perspective: 1000px;
+        }
+
+        .envelope {
+            position: relative;
+            width: 500px;
+            height: 300px;
+            background: linear-gradient(to bottom, #ff6b6b, #ff4757);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            transition: transform 0.5s;
+            border: 5px solid #fff;
+        }
+
+        .flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-left: 250px solid transparent;
+            border-right: 250px solid transparent;
+            border-bottom: 160px solid #ff9f43;
+            transition: transform 0.8s ease;
+            transform-origin: top;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .card {
+            position: absolute;
+            top: 50px;
+            left: 10px;
+            width: 480px;
+            height: 270px;
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            text-align: center;
+            transform: translateY(100%);
+            transition: transform 0.8s ease 0.3s;
+        }
+
+        .btn {
+            margin-top: 20px;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .btn:hover {
+            background: linear-gradient(45deg, #e83e8c, #ff5733);
+            transform: scale(1.1);
+        }
+
+        #toggle {
+            display: none;
+        }
+
+        #toggle:checked ~ .container .flap {
+            transform: rotateX(180deg);
+        }
+
+        #toggle:checked ~ .container .card {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="toggle">
+    <div class="container">
+        <div class="envelope">
+            <div class="flap"></div>
+            <div class="card">
+                <h1>🎉 Feliz Cumpleaños, Estephany Gabriela 🎂</h1>
+                <p>Fátima,  
+                🎉🎁🎈 Hoy es un dia muy especial ya que cumples 23 años 
+                que Dios te bendiga grandemente, sabes que siempre quiero 
+                todo lo bueno para ti me importas tu MUCHAS FELICIDADES🎉🎂💖.  
+                ¡Todo lo bueno para ti! 💖</p>
+                <div class="footer">Con cariño.🎁🎈</div>
+            </div>
+        </div>
+    </div>
+    <label for="toggle" class="btn">Abrir Sobre ✨</label>
+</body>
+</html>
